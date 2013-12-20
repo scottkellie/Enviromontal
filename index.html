@@ -1,0 +1,183 @@
+﻿<!DOCTYPE HTML5 >
+<html>
+<head>
+    <script type="text/javascript"</script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.map"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <title>Enviromontal v1_0_001</title>
+    <meta charset="UTF-8" />
+    <style type="text/css">
+        h1 {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .response {
+            color: blue;
+        }
+
+        fieldset {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            -moz-box-shadow: 10px 10px 10px #000000;
+            -webkit-box-shadow: 10px 10px 10px #000000;
+        }
+
+        #output {
+            font-family: monospace;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            background-color: #eeeeee;
+            padding: 1em;
+            border: 5px groove #cccccc;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-box-shadow: 20px 20px 20px #000000;
+            -webkit-box-shadow: 20px 20px 20px #000000;
+        }
+        #incomingChatMessageBox {
+            width: 342px;
+        }
+    </style>
+    <script language="javascript" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.map"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://rawgithub.com/joewalnes/smoothie/master/smoothie.js"></script>
+    <script>
+        
+        var iosocket = io.connect('http://localhost:8888');
+        var smoothie = new SmoothieChart();
+        
+        var in5value;
+        // Data
+        var line1 = new TimeSeries();
+        var line2 = new TimeSeries();
+
+        // Add to SmoothieChart
+        smoothie.addTimeSeries(line1);
+        smoothie.addTimeSeries(line2);
+        $(function () {
+           
+        // Add a random value to each line every second
+        setInterval(function () {
+			line1.append(new Date().getTime(), Math.random());
+            line2.append(new Date().getTime(), Math.random());
+            }, 1000);
+
+                iosocket.on('connect', function () {
+                $('#incomingChatMessages').append($('<li>Connected</li>'));
+                alert('IOSOCKET CONNECTED');
+               
+                iosocket.on('name', function (message) {
+                    $('#incomingChatMessages').append($('<li></li>').text(message));
+                    in5value = message;
+                    iosocket.send('value', message);
+                    
+                });
+                iosocket.on('disconnect', function () {
+                    $('#incomingChatMessages').append('<li>Disconnected</li>');
+                });
+                iosocket.on('value', function (messagein) {
+                    $('#incomingChatMessageBox').append($('value:').text(messagein));
+                });
+                iosocket.on('error', function (reason) {
+                    console.error('Unable to connect Socket.IO', reason);
+                });
+
+                iosocket.on('connect', function () {
+                    console.info('successfully established a working connection \o/');
+                });
+            });
+            $('#outgoingChatMessage').keypress(function (event) {
+                if (event.which == 13) {
+                    event.preventDefault();
+                    iosocket.send($('#outgoingChatMessage').val());
+                    $('#incomingChatMessages').append($('<li></li>').text($('#outgoingChatMessage').val()));
+                }
+
+            });
+        });
+        function connect() {
+            //open socket
+            iosocket = iosocket.connect();
+            iosocket.send('ConnectionButtonClicked');
+            //alert('IOSOCKET CONNECTED');
+            output.innerHTML = "connecting...";
+        } // end connect
+        function sendMessage() {
+            //get message from text box
+            txtMessage = document.getElementById("txtMessage");
+            //make variable of message
+            message = txtMessage.value;
+            //pass message to server
+            iosocket.send(message);
+
+            //alert("<p>MESSAGE SENT: " + message + "</p>");
+        }
+        
+        function sendMessageBtn(message) {
+            //get message from text box
+            //make variable of message
+            //pass message to server
+            iosocket.send('command:'+message);
+            smoothie.addTimeSeries(line1);
+            
+            // Data
+           //var line1 = new smoothie.addTimeSeries(in5value);
+           smoothie.streamTo(document.getElementById("mycanvas"));
+          }
+        function disconnect() {
+            io.end();
+            alert('disconnected');
+        }
+
+    </script>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <button type="button"
+                    onclick="connect()">
+                connect to server
+            </button>
+            <label for="txtMessage">&nbsp;</label><input type="text" id="txtMessage">
+            <button type="button"
+                    onclick="sendMessage()">
+                send message
+            </button>
+            <button type="button"
+                    onclick="disconnect()">
+                disconnect
+            </button>
+                <hr />
+
+                <input id="Out5On" type="button" value="led5:on" onclick="sendMessageBtn('led5:on')" />
+                <input id="Out5Off" type="button" value="led5:off" onclick="sendMessageBtn('led5:off')" />
+                <input id="Out6On" type="button" value="led6:on" onclick="sendMessageBtn('led6:on')" />
+                <input id="Out6Off" type="button" value="led6:off" onclick="sendMessageBtn('led6:off')" /><br />
+&nbsp;<hr />    <input id="Out10On" type="button" value="relay10:off" onclick="sendMessageBtn('relay1:on')" />
+                <input id="Out10Off" type="button" value="relay10:on" onclick="sendMessageBtn('relay1:off')" />
+                <input id="Out11On" type="button" value="relay11:off" onclick="sendMessageBtn('relay2:on')" />
+                <input id="Out11Off" type="button" value="relay11:on" onclick="sendMessageBtn('relay2:off')" /><br />
+                <div>
+                <canvas id="mycanvas" width="400" height="100"></canvas>
+                </div>
+                <hr />
+               
+                Incoming Chat:
+                <div id="incomingChatMessages"></div>
+                &nbsp;</fieldset><hr />
+                <div title="response">
+            <input id="incomingChatMessageBox" type="text" />
+        </div>
+    </form>
+</body>
+</html>
