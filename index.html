@@ -56,31 +56,33 @@
         var iosocket = io.connect('http://localhost:8888');
         var smoothie = new SmoothieChart();
         
-        var in5value;
+        var in5value = '';
         // Data
         var line1 = new TimeSeries();
         var line2 = new TimeSeries();
 
         // Add to SmoothieChart
-        smoothie.addTimeSeries(line1);
-        smoothie.addTimeSeries(line2);
+        //smoothie.addTimeSeries(line1);
+        //smoothie.addTimeSeries(line2);
         $(function () {
            
         // Add a random value to each line every second
         setInterval(function () {
-			line1.append(new Date().getTime(), Math.random());
+			//line1.append(new Date().getTime(), Math.random());
             line2.append(new Date().getTime(), Math.random());
+			
             }, 1000);
 
                 iosocket.on('connect', function () {
                 $('#incomingChatMessages').append($('<li>Connected</li>'));
                 alert('IOSOCKET CONNECTED');
                
-                iosocket.on('name', function (message) {
-                    $('#incomingChatMessages').append($('<li></li>').text(message));
-                    in5value = message;
-                    iosocket.send('value', message);
-                    
+                iosocket.on('message', function (message) {
+                    $('#incomingChatMessages').append(message);
+					var i5;
+					i5++
+					smoothie.addTimeSeries(line1);
+                    line1.append(message);
                 });
                 iosocket.on('disconnect', function () {
                     $('#incomingChatMessages').append('<li>Disconnected</li>');
@@ -119,7 +121,6 @@
             message = txtMessage.value;
             //pass message to server
             iosocket.send(message);
-
             //alert("<p>MESSAGE SENT: " + message + "</p>");
         }
         

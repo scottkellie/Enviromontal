@@ -112,9 +112,7 @@ var server = http.createServer(function (req, res)
 				this.repl.inject({
 	out14: relay4
   });
-	in5.on("data", function() {
-    socket.emit(this.value, this.raw);
-  });			
+	
 photoresistor = new five.Sensor({pin: "A2",freq: 250, samples:20})
   this.repl.inject({
   pot: photoresistor
@@ -125,8 +123,8 @@ photoresistor = new five.Sensor({pin: "A2",freq: 250, samples:20})
 
 	socketio.listen(server).on('connection', function (socket)
 		{               led5.on();
-			   setTimeout(initledon, 100);
-							   function initledon(){
+				setTimeout(initledon, 100);
+				function initledon(){
 						led7.on(),
 						relay1.off(),
 						relay2.off();
@@ -137,6 +135,17 @@ photoresistor = new five.Sensor({pin: "A2",freq: 250, samples:20})
 						led6.off(),
 						led7.off();
 		}
+		setInterval(in5readvalue,10000);
+		function in5readvalue ()
+		{
+		var myStringArray = ['name:'];
+		for (var i = 0; i < 2; i++) {
+		in5value = in5.value.toString();
+		socket.send(in5value);
+		i++;
+		};
+}; 
+ 
 			socket.on('command', function (msg)
 				{
 					console.log(msg);
@@ -153,80 +162,80 @@ photoresistor = new five.Sensor({pin: "A2",freq: 250, samples:20})
 					// "data" get the current reading from the photoresistor
 					//in5.on("data", function() {
 					 console.log( in5.value );
-					 socket.emit('value5:'+in5.value);
-					 //socket.broadcast.emit('value', inmsg)
+					 socket.send('value5:'+in5.value);
+					 //socket.broadcast.send('value', inmsg)
 					 };
 			if (inmsg === "command:relay1:on") {
 				relay1.on();
 				console.log('command:relay1 on');
-				socket.emit(inmsg);
+				socket.send(inmsg);
 			}
 			if (inmsg === "command:relay2:on") {
 				relay2.on();
 				console.log('relay2 on');
-				socket.emit(inmsg);
+				socket.send(inmsg);
 			}
 			if (inmsg === "command:relay3:on") {
 				relay3.on();
 				console.log('relay3 on');
-				socket.emit(inmsg);
+				socket.send(inmsg);
 			}
 			   if (inmsg === "command:relay4:on") {
 				relay4.on();
 				console.log('relay4 on');
-				socket.emit(inmsg);
+				socket.send(inmsg);
 			}
 			///turn relays off
 			if (inmsg === "command:relay1:off") {
 				relay1.off();
 				console.log('relay1 off');
-			socket.emit(inmsg);
+			socket.send(inmsg);
 			}
 			if (inmsg === "command:relay2:off") {
 				relay2.off();
 				console.log('relay2 off');
-			socket.emit(inmsg);
+			socket.send(inmsg);
 			}
 			if (inmsg === "command:relay3:off") {
 				relay3.off();
 				console.log('relay3 off');
-			socket.emit(inmsg);
+			socket.send(inmsg);
 			}
 			if (inmsg === "command:relay4:off") {
 				relay4.off();
 				console.log('relay4 off');
-			socket.emit(inmsg);
+			socket.send(inmsg);
 															}
 			if(inmsg == "command:led5:off")
 					{
 						led5.off();
-					socket.emit(inmsg);
+					socket.send(inmsg);
 					}
 					if(inmsg == "command:led5:on")
 					{
-						socket.emit(inmsg);
+						socket.send(inmsg);
 						//led5.strobe(50);
 						led5.on();
 					}
 							if(inmsg == "command:led6:off")
 					{
 						led6.off();
-					socket.emit(inmsg);
+					socket.send(inmsg);
 					}
 					if(inmsg == "command:led6:on")
 					{
-						socket.emit(inmsg);
+						socket.send(inmsg);
 						//led5.strobe(50);
 						led6.on();
 					}
 							if(inmsg == "command:led7:off")
 					{
 						led7.off();
-					socket.emit(inmsg);
+					socket.send(inmsg);
 					}
 					if(inmsg == "command:led7:on")
 					{
-						socket.emit(inmsg);
+						socket.send(inmsg);
 						//led5.strobe(50);
 						led7.on();
 					}
@@ -234,7 +243,6 @@ photoresistor = new five.Sensor({pin: "A2",freq: 250, samples:20})
 });
 });
 });
-
 //################Scratchpad#######################
 /*
 //Output commands for each different pin TYPE https://github.com/rwaldron/johnny-five/wiki/Board
