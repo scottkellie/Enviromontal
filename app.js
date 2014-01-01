@@ -113,7 +113,7 @@ var server = http.createServer(function (req, res)
 		for (var i = 0; i < 2; i++) {
 		in5value = in5.value.toString();
 		socket.send('5'+in5value);
-        		i++;
+				i++;
 				};
 			}
         if (inReadValue > 6000 && inReadValue < 61024)

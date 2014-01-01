@@ -62,87 +62,117 @@
 				var iosocket = io.connect('http://localhost:8888');
 			   
 				var valueRead5;
+				var valuRead6;
 				$(function () {
 				    var max5 = 100;
 				    var min5 = 100;
-					var html =
+				    var html =
 '<div id="gauge" style="width: 60%; height: 100%; float: left;"></div>\
 <div id="panel" style="width: 40%; float: left; text-align: left; margin-top: 20px;">\
 <table style="width: 100%;">\
 	</div>';
-				var chart = new SmoothieChart({update: 10000,maxValue:1025,minValue:0, timestampFormatter: SmoothieChart.timeFormatter, horizontalLines: [{ color: '#ffffff', lineWidth: 1, value: 0 }, { color: '#880000', lineWidth: 2, value: 3333 }, { color: '#880000', lineWidth: 2, value: -3333 }] }),
-			   canvas = document.getElementById('smoothie-chart'),
-			   series = new TimeSeries(valueRead5);
-					chart.addTimeSeries(series, { lineWidth: 2, strokeStyle: '#00ff00' });
-					chart.streamTo(canvas, 500);
-					$('#chartContainer').append(html);
+				    var chart = new SmoothieChart({ update: 10000, maxValue: 1025, minValue: 0, timestampFormatter: SmoothieChart.timeFormatter, horizontalLines: [{ color: '#ffffff', lineWidth: 1, value: 0 }, { color: '#880000', lineWidth: 2, value: 3333 }, { color: '#880000', lineWidth: 2, value: -3333 }] }),
+				   canvas = document.getElementById('smoothie-chart'),
+				   series = new TimeSeries(valueRead5);
+				    chart.addTimeSeries(series, { lineWidth: 2, strokeStyle: '#00ff00' });
+				    chart.streamTo(canvas, 500);
+				    $('#chartContainer').append(html);
 
-					
 
-					iosocket.on('connect', function () {
-						$('#incomingChatMessages').append($('<li>Connected</li>'));
-						//alert('IOSOCKET CONNECTED');
-					});
 
-					iosocket.on('message', function (message) {
+				    iosocket.on('connect', function () {
+				        $('#incomingChatMessages').append($('<li>Connected</li>'));
+				        //alert('IOSOCKET CONNECTED');
+				    });
 
-					    if (message.match(/^5#/)) {
-					        var message5 = message.substring(2, 6)
-					        valueRead5 = message5;
-					        if (valueRead5 >= max5) {
-					            max5 = valueRead5;
-					        }
-					        if (valueRead5 <= min5) {
-					            min5 = valueRead5;
-					        }
-							var currentTime = new Date().getTime();
-							series.append(currentTime, message);
-							console.info(valueRead5);
-							var gauge = $('#gauge').dxCircularGauge({
-								scale: {
-									startValue: 0, endValue: 900,
-									majorTick: { tickInterval: 50 },
-									label: {
-										customizeText: function (arg) {
-											return arg.valueText + ' Light';
-										}
-									}
-								},
-								value: valueRead5,
-								subvalues: [min5, max5]
-							}).dxCircularGauge('instance');
-							$('#incomingChatMessages').append($('<li' + message + '</li>'));
-							
-					
-						}
-						else {
-							 $('#incomingChatMessages').append($('<li> else' + message + '</li>'));
-						}
-					});
-					iosocket.on('disconnect', function () {
-						$('#incomingChatMessages').append('<li>Disconnected</li>');
-					});
+				    iosocket.on('message', function (message) {
 
-					iosocket.on('value', function (messagein) {
-						$('#incomingChatMessageBox').append('<li>' + message + '</li>');
+				        if (message.match(/^5#/)) {
+				            var message5 = message.substring(2, 6)
+				            valueRead5 = message5;
+				            if (valueRead5 >= max5) {
+				                max5 = valueRead5;
+				            }
+				            if (valueRead5 <= min5) {
+				                min5 = valueRead5;
+				            }
+				            var currentTime = new Date().getTime();
+				            series.append(currentTime, message);
+				            console.info(valueRead5);
+				            var gauge = $('#gauge').dxCircularGauge({
+				                scale: {
+				                    startValue: 0, endValue: 900,
+				                    majorTick: { tickInterval: 50 },
+				                    label: {
+				                        customizeText: function (arg) {
+				                            return arg.valueText + ' Light';
+				                        }
+				                    }
+				                },
+				                value: valueRead5,
+				                subvalues: [min5, max5]
+				            }).dxCircularGauge('instance');
+				            $('#incomingChatMessages').append($('<li' + message + '</li>'));
 
-					});
+				            ///next analog input 6
+				            if (message.match(/^6#/)) {
+				                var message6 = message.substring(2, 6)
+				                valueRead6 = message6;
+				                if (valueRead6 >= max6) {
+				                    max6 = valueRead6;
+				                }
+				                if (valueRead6 <= min6) {
+				                    min6 = valueRead6;
+				                }
+				                var currentTime = new Date().getTime();
+				                series.append(currentTime, message);
+				                console.info(valueRead6);
+				                var gauge = $('#gauge').dxCircularGauge({
+				                    scale: {
+				                        startValue: 0, endValue: 900,
+				                        majorTick: { tickInterval: 50 },
+				                        label: {
+				                            customizeText: function (arg) {
+				                                return arg.valueText + ' Light';
+				                            }
+				                        }
+				                    },
+				                    value: valueRead6,
+				                    subvalues: [min6, max6]
+				                }).dxCircularGauge('instance');
+				                $('#incomingChatMessages').append($('<li' + message + '</li>'));
 
-					iosocket.on('error', function (reason) {
-						console.error('Unable to connect Socket.IO', reason);
-					});
+				            }
 
-					iosocket.on('connect', function () {
-						console.info('successfully established a working connection \o/');
-					});
+				            else {
+				                $('#incomingChatMessages').append($('<li> else' + message + '</li>'));
+				            }
+				        }
+				        iosocket.on('disconnect', function () {
+				            $('#incomingChatMessages').append('<li>Disconnected</li>');
+				        });
 
-					$('#outgoingChatMessage').keypress(function (event) {
-						if (event.which == 13) {
-							event.preventDefault();
-							iosocket.send($('#outgoingChatMessage').val());
-							$('#incomingChatMessages').append($('<li></li>').text($('#outgoingChatMessage').val()));
-						}
-					});
+				        iosocket.on('value', function (messagein) {
+				            $('#incomingChatMessageBox').append('<li>' + message + '</li>');
+
+				        });
+
+				        iosocket.on('error', function (reason) {
+				            console.error('Unable to connect Socket.IO', reason);
+				        });
+
+				        iosocket.on('connect', function () {
+				            console.info('successfully established a working connection \o/');
+				        });
+
+				        $('#outgoingChatMessage').keypress(function (event) {
+				            if (event.which == 13) {
+				                event.preventDefault();
+				                iosocket.send($('#outgoingChatMessage').val());
+				                $('#incomingChatMessages').append($('<li></li>').text($('#outgoingChatMessage').val()));
+				            }
+				        });
+				    });
 				});
 					function connect() {
 						//open socket
@@ -157,7 +187,7 @@
 						txtMessage = document.getElementById("txtMessage");
 						//make variable of message
 						message = txtMessage.value;
-						
+
 						//pass message to server
 						iosocket.send(message);
 						//alert("<p>MESSAGE SENT: " + message + "</p>");
@@ -170,14 +200,14 @@
 						iosocket.send('command:' + message);
 						// smoothie.addTimeSeries(line1);
 					}
-						// Data
+					// Data
 					function myYRangeFunction() {
 						// TODO implement your calculation using range.min and range.max
 						var min = 0;
 						var max = 1024;
-						return {min: min, max: max};
+						return { min: min, max: max };
 					}
-						function disconnect() {
+					function disconnect() {
 						io.end();
 						alert('disconnected');
 					}
