@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5738106c-6b6b-4f2b-9199-3a2976093522}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>app.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <NodejsPort>
+    </NodejsPort>
+    <LaunchUrl>127.0.0.1:8888</LaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="main.css" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Compile Include="app.js" />
+    <Compile Include="DB.js" />
+    <Compile Include="jquery.min.js" />
+    <Compile Include="smoothie.js" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="old\client.html" />
+    <Content Include="old\client_ref.html" />
+    <Compile Include="old\enviroServer.js" />
+    <Compile Include="old\Enviroserver_ref.js" />
+    <Compile Include="Scripts\_references.js" />
+    <Content Include="Enviro\{C80FD23F-4F4A-4FD9-B9DE-854A3A28BC95}\CodeAnalysisLog.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git" />
+    <Folder Include=".git\hooks" />
+    <Folder Include=".git\info" />
+    <Folder Include=".git\logs" />
+    <Folder Include=".git\logs\refs" />
+    <Folder Include=".git\logs\refs\heads" />
+    <Folder Include=".git\logs\refs\remotes" />
+    <Folder Include=".git\logs\refs\remotes\origin" />
+    <Folder Include=".git\objects" />
+    <Folder Include=".git\objects\09" />
+    <Folder Include=".git\objects\20" />
+    <Folder Include=".git\objects\24" />
+    <Folder Include=".git\objects\2b" />
+    <Folder Include=".git\objects\3e" />
+    <Folder Include=".git\objects\48" />
+    <Folder Include=".git\objects\64" />
+    <Folder Include=".git\objects\68" />
+    <Folder Include=".git\objects\6c" />
+    <Folder Include=".git\objects\76" />
+    <Folder Include=".git\objects\7e" />
+    <Folder Include=".git\objects\8b" />
+    <Folder Include=".git\objects\8e" />
+    <Folder Include=".git\objects\a7" />
+    <Folder Include=".git\objects\a9" />
+    <Folder Include=".git\objects\ac" />
+    <Folder Include=".git\objects\b3" />
+    <Folder Include=".git\objects\b4" />
+    <Folder Include=".git\objects\b6" />
+    <Folder Include=".git\objects\c2" />
+    <Folder Include=".git\objects\d7" />
+    <Folder Include=".git\objects\e6" />
+    <Folder Include=".git\objects\ec" />
+    <Folder Include=".git\objects\ed" />
+    <Folder Include=".git\objects\info" />
+    <Folder Include=".git\objects\pack" />
+    <Folder Include=".git\refs" />
+    <Folder Include=".git\refs\heads" />
+    <Folder Include=".git\refs\remotes" />
+    <Folder Include=".git\refs\remotes\origin" />
+    <Folder Include=".git\refs\tags" />
+    <Folder Include="App_Code" />
+    <Folder Include="Enviro" />
+    <Folder Include="Enviro\{C80FD23F-4F4A-4FD9-B9DE-854A3A28BC95}" />
+    <Folder Include="lib" />
+    <Folder Include="node_modules\" />
+    <Folder Include="node_modules\.bin" />
+    <Folder Include="node_modules\emitter" />
+    <Folder Include="node_modules\emitter\node_modules" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy\lib" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy\node_modules" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy\node_modules\debug" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy\node_modules\debug\example" />
+    <Folder Include="node_modules\emitter\node_modules\asynclist\node_modules\eventproxy\node_modules\debug\lib" />
+    <Folder Include="node_modules\firmata" />
+    <Folder Include="node_modules\firmata\examples" />
+    <Folder Include="node_modules\firmata\lib" />
+    <Folder Include="node_modules\firmata\node_modules" />
+    <Folder Include="node_modules\firmata\node_modules\browser-serialport" />
+    <Folder Include="node_modules\firmata\node_modules\browser-serialport\demo" />
+    <Folder Include="node_modules\firmata\node_modules\browser-serialport\demo\extentionAssets" />
+    <Folder Include="node_modules\firmata\node_modules\browser-serialport\demoPacked" />
+    <Folder Include="node_modules\firmata\test" />
+    <Folder Include="node_modules\johnny-five" />
+    <Folder Include="node_modules\johnny-five\assets" />
+    <Folder Include="node_modules\johnny-five\docs" />
+    <Folder Include="node_modules\johnny-five\docs\breadboard" />
+    <Folder Include="node_modules\johnny-five\eg" />
+    <Folder Include="node_modules\johnny-five\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\async" />
+    <Folder Include="node_modules\johnny-five\node_modules\async\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\colors" />
+    <Folder Include="node_modules\johnny-five\node_modules\colors\themes" />
+    <Folder Include="node_modules\johnny-five\node_modules\compulsive" />
+    <Folder Include="node_modules\johnny-five\node_modules\compulsive\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\compulsive\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\descriptor" />
+    <Folder Include="node_modules\johnny-five\node_modules\descriptor\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\descriptor\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections\build" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections\builder" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections\builder\jar" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections\src" />
+    <Folder Include="node_modules\johnny-five\node_modules\es6-collections\tests" />
+    <Folder Include="node_modules\johnny-five\node_modules\keypress" />
+    <Folder Include="node_modules\johnny-five\node_modules\lodash" />
+    <Folder Include="node_modules\johnny-five\node_modules\lodash\dist" />
+    <Folder Include="node_modules\johnny-five\node_modules\nanotimer" />
+    <Folder Include="node_modules\johnny-five\node_modules\nanotimer\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\nanotimer\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\example" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\node_modules\wordwrap" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\node_modules\wordwrap\example" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\node_modules\wordwrap\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\optimist\test\_" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\benchmarks" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\lib\stores" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\lib\transports" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\lib\transports\websocket" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\base64id" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\base64id\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile\doc" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile\examples" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile\tests" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\policyfile\tests\ssl" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\benches" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\benches\stress" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\benches\stress\pubsub" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\benches\stress\rpushblpop" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\benches\stress\speed" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\examples" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\redis\lib\parser" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\bin" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\component-bind" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\component-emitter" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\component-json" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\component-json-fallback" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\learnboost-engine.io-client" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\learnboost-engine.io-client\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\learnboost-engine.io-client\lib\transports" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\learnboost-socket.io-protocol" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\timoxley-to-array" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\components\visionmedia-debug" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\dist" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\transports" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe\net" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe\net\proxies" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\gsolo" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\gsolo\encryption" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\cert" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\hash" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\prng" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\rsa" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\symmetric" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\tests" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\tls" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\math" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\util" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\util\der" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\.bin" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\bin" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\test\unit" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress\expected" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\uglify-js\tmp" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\bench" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\bin" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\build" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\doc" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\fileapi" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\fileapi\public" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\serverstats" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\serverstats\public" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\serverstats-express_3" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\examples\serverstats-express_3\public" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\commander" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\commander\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\nan" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\options" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\options\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\options\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\options\test\fixtures" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\node_modules\tinycolor" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\src" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\ws\test\fixtures" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\xmlhttprequest" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\xmlhttprequest\example" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\xmlhttprequest\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\node_modules\xmlhttprequest\tests" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\test" />
+    <Folder Include="node_modules\johnny-five\node_modules\socket.io\node_modules\socket.io-client\test\node" />
+    <Folder Include="node_modules\johnny-five\node_modules\temporal" />
+    <Folder Include="node_modules\johnny-five\node_modules\temporal\lib" />
+    <Folder Include="node_modules\johnny-five\node_modules\temporal\test" />
+    <Folder Include="node_modules\johnny-five\test" />
+    <Folder Include="node_modules\johnny-five\tpl" />
+    <Folder Include="node_modules\johnny-five\util" />
+    <Folder Include="node_modules\node-static" />
+    <Folder Include="node_modules\node-static\benchmark" />
+    <Folder Include="node_modules\node-static\bin" />
+    <Folder Include="node_modules\node-static\etc" />
+    <Folder Include="node_modules\node-static\examples" />
+    <Folder Include="node_modules\node-static\lib" />
+    <Folder Include="node_modules\node-static\lib\node-static" />
+    <Folder Include="node_modules\node-static\node_modules" />
+    <Folder Include="node_modules\node-static\node_modules\colors" />
+    <Folder Include="node_modules\node-static\node_modules\colors\themes" />
+    <Folder Include="node_modules\node-static\node_modules\mime" />
+    <Folder Include="node_modules\node-static\node_modules\mime\types" />
+    <Folder Include="node_modules\node-static\node_modules\optimist" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\example" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\minimist" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\minimist\example" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\minimist\test" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\wordwrap" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\wordwrap\example" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\node_modules\wordwrap\test" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\test" />
+    <Folder Include="node_modules\node-static\node_modules\optimist\test\_" />
+    <Folder Include="node_modules\node-static\test" />
+    <Folder Include="node_modules\node-static\test\fixtures" />
+    <Folder Include="node_modules\node-static\test\fixtures\there" />
+    <Folder Include="node_modules\node-static\test\integration" />
+    <Folder Include="node_modules\path" />
+    <Folder Include="node_modules\serialport" />
+    <Folder Include="node_modules\serialport\arduinoTest" />
+    <Folder Include="node_modules\serialport\bin" />
+    <Folder Include="node_modules\serialport\build" />
+    <Folder Include="node_modules\serialport\build\Release" />
+    <Folder Include="node_modules\serialport\build\Release\obj" />
+    <Folder Include="node_modules\serialport\build\Release\obj\serialport" />
+    <Folder Include="node_modules\serialport\examples" />
+    <Folder Include="node_modules\serialport\node_modules" />
+    <Folder Include="node_modules\serialport\node_modules\async" />
+    <Folder Include="node_modules\serialport\node_modules\async\lib" />
+    <Folder Include="node_modules\serialport\node_modules\bindings" />
+    <Folder Include="node_modules\serialport\node_modules\optimist" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\example" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\node_modules" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\node_modules\wordwrap" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\node_modules\wordwrap\example" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\node_modules\wordwrap\test" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\test" />
+    <Folder Include="node_modules\serialport\node_modules\optimist\test\_" />
+    <Folder Include="node_modules\serialport\node_modules\sf" />
+    <Folder Include="node_modules\serialport\node_modules\sf\lib" />
+    <Folder Include="node_modules\serialport\node_modules\sf\test" />
+    <Folder Include="node_modules\serialport\src" />
+    <Folder Include="node_modules\serialport\src\win" />
+    <Folder Include="node_modules\serialport\test" />
+    <Folder Include="node_modules\serialport\test_mocks" />
+    <Folder Include="node_modules\smoothie" />
+    <Folder Include="node_modules\smoothie\.idea" />
+    <Folder Include="node_modules\smoothie\.idea\inspectionProfiles" />
+    <Folder Include="node_modules\smoothie\.idea\scopes" />
+    <Folder Include="node_modules\smoothie\builder" />
+    <Folder Include="node_modules\smoothie\docs" />
+    <Folder Include="node_modules\smoothie\examples" />
+    <Folder Include="node_modules\socket.io" />
+    <Folder Include="node_modules\socket.io\benchmarks" />
+    <Folder Include="node_modules\socket.io\lib" />
+    <Folder Include="node_modules\socket.io\lib\stores" />
+    <Folder Include="node_modules\socket.io\lib\transports" />
+    <Folder Include="node_modules\socket.io\lib\transports\websocket" />
+    <Folder Include="node_modules\socket.io\node_modules" />
+    <Folder Include="node_modules\socket.io\node_modules\base64id" />
+    <Folder Include="node_modules\socket.io\node_modules\base64id\lib" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile\doc" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile\examples" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile\lib" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile\tests" />
+    <Folder Include="node_modules\socket.io\node_modules\policyfile\tests\ssl" />
+    <Folder Include="node_modules\socket.io\node_modules\redis" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\benches" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\benches\stress" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\benches\stress\pubsub" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\benches\stress\rpushblpop" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\benches\stress\speed" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\examples" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\lib" />
+    <Folder Include="node_modules\socket.io\node_modules\redis\lib\parser" />
+    <Folder Include="node_modules\socket.io-client" />
+    <Folder Include="node_modules\socket.io-client\bin" />
+    <Folder Include="node_modules\socket.io-client\components" />
+    <Folder Include="node_modules\socket.io-client\components\component-bind" />
+    <Folder Include="node_modules\socket.io-client\components\component-emitter" />
+    <Folder Include="node_modules\socket.io-client\components\component-json" />
+    <Folder Include="node_modules\socket.io-client\components\component-json-fallback" />
+    <Folder Include="node_modules\socket.io-client\components\learnboost-engine.io-client" />
+    <Folder Include="node_modules\socket.io-client\components\learnboost-engine.io-client\lib" />
+    <Folder Include="node_modules\socket.io-client\components\learnboost-engine.io-client\lib\transports" />
+    <Folder Include="node_modules\socket.io-client\components\learnboost-socket.io-protocol" />
+    <Folder Include="node_modules\socket.io-client\components\timoxley-to-array" />
+    <Folder Include="node_modules\socket.io-client\components\visionmedia-debug" />
+    <Folder Include="node_modules\socket.io-client\dist" />
+    <Folder Include="node_modules\socket.io-client\lib" />
+    <Folder Include="node_modules\socket.io-client\lib\transports" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe\net" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\adobe\net\proxies" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\gsolo" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\gsolo\encryption" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\cert" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\hash" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\prng" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\rsa" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\symmetric" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\tests" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\crypto\tls" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\math" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\util" />
+    <Folder Include="node_modules\socket.io-client\lib\vendor\web-socket-js\flash-src\com\hurlant\util\der" />
+    <Folder Include="node_modules\socket.io-client\node_modules" />
+    <Folder Include="node_modules\socket.io-client\node_modules\.bin" />
+    <Folder Include="node_modules\socket.io-client\node_modules\active-x-obfuscator" />
+    <Folder Include="node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules" />
+    <Folder Include="node_modules\socket.io-client\node_modules\active-x-obfuscator\node_modules\zeparser" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\bin" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\lib" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\test" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\test\unit" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress\expected" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\test\unit\compress\test" />
+    <Folder Include="node_modules\socket.io-client\node_modules\uglify-js\tmp" />
+    <Folder Include="node_modules\socket.io-client\node_modules\xmlhttprequest" />
+    <Folder Include="node_modules\socket.io-client\node_modules\xmlhttprequest\example" />
+    <Folder Include="node_modules\socket.io-client\node_modules\xmlhttprequest\lib" />
+    <Folder Include="node_modules\socket.io-client\node_modules\xmlhttprequest\tests" />
+    <Folder Include="node_modules\socket.io-client\test" />
+    <Folder Include="node_modules\socket.io-client\test\node" />
+    <Folder Include="node_modules\stream" />
+    <Folder Include="node_modules\stream\node_modules" />
+    <Folder Include="node_modules\stream\node_modules\.bin" />
+    <Folder Include="node_modules\stream\node_modules\expect.js" />
+    <Folder Include="node_modules\stream\node_modules\mocha" />
+    <Folder Include="node_modules\stream\node_modules\mocha\bin" />
+    <Folder Include="node_modules\stream\node_modules\mocha\images" />
+    <Folder Include="node_modules\stream\node_modules\mocha\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\lib\browser" />
+    <Folder Include="node_modules\stream\node_modules\mocha\lib\interfaces" />
+    <Folder Include="node_modules\stream\node_modules\mocha\lib\reporters" />
+    <Folder Include="node_modules\stream\node_modules\mocha\lib\reporters\templates" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\.bin" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\commander" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\debug" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\debug\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\diff" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\examples" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\graceful-fs" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\graceful-fs\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\inherits" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\lru-cache" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\sigmund" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\node_modules\minimatch\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\glob\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\growl" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\growl\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\bin" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\lib\nodes" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules\commander" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules\commander\lib" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules\mkdirp" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules\mkdirp\examples" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\node_modules\mkdirp\test" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\jade\testing" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\mkdirp" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\mkdirp\examples" />
+    <Folder Include="node_modules\stream\node_modules\mocha\node_modules\mkdirp\test" />
+    <Folder Include="node_modules\websocket" />
+    <Folder Include="node_modules\websocket\build" />
+    <Folder Include="node_modules\websocket\lib" />
+    <Folder Include="node_modules\websocket\src" />
+    <Folder Include="node_modules\websocket\vendor" />
+    <Folder Include="node_modules\websocket\vendor\node-ctype" />
+    <Folder Include="node_modules\ws" />
+    <Folder Include="node_modules\ws\bench" />
+    <Folder Include="node_modules\ws\bin" />
+    <Folder Include="node_modules\ws\build" />
+    <Folder Include="node_modules\ws\doc" />
+    <Folder Include="node_modules\ws\examples" />
+    <Folder Include="node_modules\ws\examples\fileapi" />
+    <Folder Include="node_modules\ws\examples\fileapi\public" />
+    <Folder Include="node_modules\ws\examples\serverstats" />
+    <Folder Include="node_modules\ws\examples\serverstats\public" />
+    <Folder Include="node_modules\ws\examples\serverstats-express_3" />
+    <Folder Include="node_modules\ws\examples\serverstats-express_3\public" />
+    <Folder Include="node_modules\ws\lib" />
+    <Folder Include="node_modules\ws\node_modules" />
+    <Folder Include="node_modules\ws\node_modules\commander" />
+    <Folder Include="node_modules\ws\node_modules\commander\lib" />
+    <Folder Include="node_modules\ws\node_modules\nan" />
+    <Folder Include="node_modules\ws\node_modules\options" />
+    <Folder Include="node_modules\ws\node_modules\options\lib" />
+    <Folder Include="node_modules\ws\node_modules\options\test" />
+    <Folder Include="node_modules\ws\node_modules\options\test\fixtures" />
+    <Folder Include="node_modules\ws\node_modules\tinycolor" />
+    <Folder Include="node_modules\ws\src" />
+    <Folder Include="node_modules\ws\test" />
+    <Folder Include="node_modules\ws\test\fixtures" />
+    <Folder Include="obj" />
+    <Folder Include="obj\Debug" />
+    <Folder Include="old" />
+    <Folder Include="Scripts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
